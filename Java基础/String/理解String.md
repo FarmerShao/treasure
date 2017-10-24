@@ -45,9 +45,22 @@ String c = "aaaabbbb";
     }  
     ```
 
++ 通过代码反编译查看编译器对字符进行"+"号时的优化处理：
+```
+//原代码
+public class Test {
 
+    public static void main(String args[]) {
+        String str = "abc";
+        str = str + "haha" + 1;
+        for(int i = 0; i < 20; i++){
+            str += i;
+        }
+    }
+}
+```
+![Test反编译][1]
  
 
 
-
-
+  [1]: https://github.com/FarmerShao/treasure/blob/master/Java%E5%9F%BA%E7%A1%80/String/Test%E5%8F%8D%E7%BC%96%E8%AF%91.png
