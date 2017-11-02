@@ -62,9 +62,11 @@ public class TreeSet<E> extends AbstractSet<E>
 + LinkedHashMap 是HashMap的子类，存储元数据为 TreeNode<K,V>。
 
 #### **HashMap的扩容 resize()** （JDK 8）
-        在HashMap 里有2个属性 loadFactor(负载因子，默认值为0.75f，可以通过构造方法赋值)和 threshold (阈值)用来帮助 HashMap 的扩容。当 HashMap 中的 Node<K,V> 超过 threashold 时就会进行扩容，这个 threashold 的计算公式是 threashold = loadFactor * capacity；HashMap 的扩容会将 Capacity 和  threashold 这2个值各自 << 1(即乘以2)； 如何将原数据移到扩容后的 Node<K,V>[] 中，看后面的源码说明。
+        在HashMap 里有2个属性 loadFactor(负载因子，默认值为0.75f，可以通过构造方法赋值)和 threshold (阈值)用来帮助 HashMap 的扩容。
+        当 HashMap 中的 Node<K,V> 超过 threashold 时就会进行扩容，这个 threashold 的计算公式是 threashold = loadFactor * capacity；HashMap 的扩容会将 Capacity 和  threashold 这2个值各自 << 1(即乘以2)； 
+        如何将原数据移到扩容后的 Node<K,V>[] 中，看后面的源码说明。
 
-    扩容的问题： 多线程下的条件竞争。（JDK 8 以前存在，JDK 8之后做了优化，就不会在多线程的情况下存在死循环问题，但是还是线程不安全的）
+        扩容的问题： 多线程下的条件竞争。（JDK 8 以前存在，JDK 8之后做了优化，就不会在多线程的情况下存在死循环问题，但是还是线程不安全的）
     
 ```
 // JDK 8 源码
