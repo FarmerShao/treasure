@@ -350,9 +350,11 @@ public @interface TestDemo {
 #### **Annotation(Metadata)：**
 所有Annotation(Metadata)都是只能作用在注解上的。
 ***@Target***：指明当前注解的可使用范围
+
 |返回值类型|元素名|说明|
 |:---:|:---:|:---:|
 |ElementType[]|value|指定可使用范围|
+
 ```
 //ElementType JDK源码
 public enum ElementType {
