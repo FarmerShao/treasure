@@ -4,11 +4,17 @@
 ---
 ## [新特性总览][1]
  [1. 泛型（Generics）](#1)
+ 
  [2. 增强for循环（Enhanced for Loop）](#2)
+ 
  [3. 自动拆装箱（Autoboxing/Unboxing）](#3)
+ 
  [4. 枚举（Typesafe Enums）](#4)
+ 
  [5. 可变长参数（Varargs）](#5)
+ 
  [6. 静态导入（Static Import）](#6)
+ 
  [7. 注解/元注解（Annotations/MetaData）](#7)
 
 ### **<span id="1">泛型（Generics）</span>**
