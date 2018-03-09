@@ -1,23 +1,10 @@
-﻿# Java 5 新特性
+# Java 5 新特性
 
-标签（空格分隔）： 新特性 java
+标签（空格分隔）： 新特性 Java
 ---
-## [新特性总览][1]
- [1. 泛型（Generics）](#1)
- 
- [2. 增强for循环（Enhanced for Loop）](#2)
- 
- [3. 自动拆装箱（Autoboxing/Unboxing）](#3)
- 
- [4. 枚举（Typesafe Enums）](#4)
- 
- [5. 可变长参数（Varargs）](#5)
- 
- [6. 静态导入（Static Import）](#6)
- 
- [7. 注解/元注解（Annotations/MetaData）](#7)
+[TOC]
 
-### **<span id="1">泛型（Generics）</span>**
+### **1. 泛型（Generics）**
 泛型为Collection提供了编译时的类型安全检测，并消除了类型强制转换的工作。
 #### **泛型使用规则：**
 + 所有泛型方法声明都有一个类型参数声明部分（由尖括号分隔），该类型参数声明部分在方法返回类型之前（在下面例子中的<E>）。多个类型参数声明使用逗号“,”分隔
@@ -61,7 +48,7 @@ public static <E> void printArray( E[] inputArray ){
 ----------
 
 
-### **<span id="2">增强for循环（Enhanced for Loop）</span>**
+### **2. 增强for循环（Enhanced for Loop）**
 #### **for-each 优缺点：**
 优点：
 1. 代码更加的优美，结构更加的清晰。
@@ -80,7 +67,7 @@ for ( String str : inputArray ){
 ----------
 
 
-### **<span id="3">自动拆装箱（Autoboxing/Unboxing）</span>**
+### **3. 自动拆装箱（Autoboxing/Unboxing）**
 装箱： 将基本类型数据封装为一个封装类对象：例 int --> Integer
 拆箱： 将一个基本类型的封装类转换为一个基本类型的数据：例 Integer --> int
 自动拆装箱： 在集合Collection 中只能存放引用类对象，而在表达式计算时只能使用基本类型数据。在没有加入自动拆装箱特性之前，将一个基本类型数据存入集合中需要将基本类型的封装成一个封装类对象；在取出集合中的基本类型封装类做计算时，将封装类对象拆箱为一个基本数据类型。加入自动拆装箱特性之后，编码时就无需再执行上述重复的操作，Java程序会自动执行上述操作，也就是说，大部分时候封装类和基本类型基本都是一样的，封装类也就是多了一些Object所有的一些特性，在基本功能上（数字或符号本身的职责上）都一致。 
@@ -89,7 +76,7 @@ for ( String str : inputArray ){
 ----------
 
 
-### **<span id="4">枚举（Typesafe Enums）</span>**
+### **4. 枚举（Typesafe Enums）**
 枚举是一种新的数据类型，它既有类(class)的特性，又比类多了一些约束。
 #### **枚举的定义：**
 在引入枚举之前，Java 定义一组常量都是以下这种格式：
@@ -126,10 +113,12 @@ enum Day{
 + 枚举不能创建新的实例，即使使用反射技术也不能创建，都是由JVM自动创建，且是单例的。
 + 枚举类是final 类型的，不能再被继承
 + 枚举默认实现了 Comparable<E> 接口，是通过比较枚举的 ordinal 这个值。
+
 ##### **相同点：**
 + 可以实现接口
 + 可以有属性
 + 可以添家自定义方法
+
 #### **枚举的抽象类 Enum&lt;T&gt;**
 Enum 的属性：
 |属性|说明|
@@ -273,7 +262,7 @@ public T newInstance(Object ... initargs)
 
 ----------
 
-### **<span id="5">可变长参数（Varargs）</span>**
+### **5. 可变长参数（Varargs）**
 当方法的参数需要接收不定长的参数时，我们可以使用数组的形式传递参数：
 ```
 public static void main(String[] args) {
@@ -321,7 +310,7 @@ public static void testMethod(int... args){
 
 
 ----------
-### **<span id="6">静态导入（Static Import）</span>**
+### **6. 静态导入（Static Import）**
 当Java 未引入"静态导入"特性时，调用静态成员时必须指明成员所属的类：
 ```
 double r = Math.cos(Math.PI * theta);
@@ -336,7 +325,7 @@ double r = cos(PI * theta);
 ```
 
 ----------
-### **<span id="7">注解/元注解（Annotations/MetaData）</span>**
+### **7. 注解/元注解（Annotations/MetaData）**
 #### **注解声明：**
 ```
 //注解的声明和接口的声明基本一致，只需在interface关键字前添加一个'@'符号即可
@@ -360,7 +349,6 @@ public @interface TestDemo {
 |返回值类型|元素名|说明|
 |:---:|:---:|:---:|
 |ElementType[]|value|指定可使用范围|
-
 ```
 //ElementType JDK源码
 public enum ElementType {
